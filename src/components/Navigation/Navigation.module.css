@@ -8,7 +8,6 @@
 
 .navList {
   display: flex;
-  /* flex-grow: 1; */
   justify-content: center;
   gap: 32px;
 }
@@ -16,7 +15,7 @@
 .link {
   padding: 24px 0;
   font-weight: 500;
-  font-size: 20px;
+  font-size: 16px;
   line-height: 1.25;
   color: var(--black);
 }
