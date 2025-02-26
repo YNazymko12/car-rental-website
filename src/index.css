@@ -1,0 +1,47 @@
+@import 'modern-normalize/modern-normalize.css';
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+:root {
+  --black: #101828;
+  --gray: #8e929a;
+  --gray-light: #dadde1;
+  --gray-extra-light: #f2f4f7;
+  --gray-ultra-light: #f7f7f7;
+  --white: #ffffff;
+  --light-blue: #3470ff;
+  --blue: #0b44cd;
+  --font-family: 'Manrope', sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  font-weight: 600;
+  color: var(--black);
+  background-color: var(--white);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
