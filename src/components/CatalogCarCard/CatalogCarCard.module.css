@@ -1,0 +1,44 @@
+.image {
+  border-radius: 14px;
+}
+
+.titleContainer {
+  margin-top: 16px;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.title {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+}
+
+.model {
+  color: var(--light-blue);
+}
+.info {
+  margin-bottom: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.infoText {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.33;
+  color: var(--gray);
+}
+
+.button {
+  padding: 12px 97px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.25;
+  border: none;
+  border-radius: 12px;
+  color: var(--white);
+  background-color: var(--light-blue);
+}
