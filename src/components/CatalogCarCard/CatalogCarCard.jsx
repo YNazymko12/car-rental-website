@@ -39,7 +39,7 @@ const CatalogCarCard = ({ car }) => {
             {addressParts.join(' | ')} | {rentalCompany} |
           </p>
           <p className={css.infoText}>
-            {type} | {mileage.toLocaleString()} km
+            {type} | {mileage.toLocaleString('uk-UA')} km
           </p>
         </div>
         <Link className={css.button} to={`/catalog/${id}`}>

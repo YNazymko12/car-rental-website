@@ -2,8 +2,33 @@
   display: flex;
   gap: 48px 32px;
   flex-wrap: wrap;
+  margin-bottom: 80px;
 }
 
 .item {
   width: calc((100% - 96px) / 4);
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.loadMore {
+  margin: 0 auto;
+  padding: 12px 38px;
+  font-size: 16px;
+  line-height: 1.25;
+  border: 1px solid var(--light-blue);
+  border-radius: 12px;
+  background-color: transparent;
+}
+
+.loadMore:hover,
+.loadMore:focus {
+  border-color: var(--blue);
+}
+
+.disLoadMore {
+  display: none;
 }
