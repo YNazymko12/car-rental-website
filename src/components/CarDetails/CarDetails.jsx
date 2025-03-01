@@ -37,7 +37,7 @@ const CarDetaills = () => {
           width="640"
           height="512"
         />
-        {/* <BookingForm/> */}
+        <BookingForm />
       </div>
       <div>
         <CarInfo car={car} />
