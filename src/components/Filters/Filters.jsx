@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Formik, Form, Field } from 'formik';
+import { Formik, Form } from 'formik';
 import Select from 'react-select';
 import { NumericFormat as NumberFormat } from 'react-number-format';
 import { fetchBrands } from '../../redux/brands/operations';
