@@ -21,15 +21,19 @@ const CatalogList = ({ loadMore }) => {
 
   return (
     <>
-      <ul className={css.list}>
-        {Array.isArray(cars) &&
-          cars.length > 0 &&
-          cars.map(car => (
+      {cars.length === 0 ? ( // Перевірка, чи масив порожній
+        <div className={css.noResults}>
+          <p>Nothing found for your request. Please try another filter.</p>
+        </div>
+      ) : (
+        <ul className={css.list}>
+          {cars.map(car => (
             <li className={css.item} key={car.id}>
               <CatalogCarCard car={car} />
             </li>
           ))}
-      </ul>
+        </ul>
+      )}
 
       {shouldShowLoadMore && (
         <div className={css.buttonContainer}>

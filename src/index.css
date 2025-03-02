@@ -53,18 +53,6 @@ a {
   text-decoration: none;
 }
 
-/* .react-datepicker {
-  border-color: var(--light-blue) !important;
-}
-.react-datepicker__header {
-  background-color: #fff !important;
-  border-color: var(--light-blue) !important;
-}
-.react-datepicker-popper .react-datepicker__triangle {
-  stroke: var(--light-blue) !important;
-}
- */
-
 .react-datepicker {
   border: 1px solid var(--light-blue) !important;
   border-radius: 12px !important;

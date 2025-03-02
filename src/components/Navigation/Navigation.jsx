@@ -20,7 +20,7 @@ const Navigation = () => {
           </NavLink>
         </li>
         <li>
-          <NavLink className={generateActiveClass} to="/catalog">
+          <NavLink className={generateActiveClass} to="/catalog" end>
             Catalog
           </NavLink>
         </li>

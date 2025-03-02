@@ -1,6 +1,6 @@
 .hero {
   margin: 0 auto;
-  background-color: var(--blue);
+  background-color: var(--gray-light);
   background-image: url('../../assets/images/hero-image.jpg');
   background-repeat: no-repeat;
   background-size: cover;

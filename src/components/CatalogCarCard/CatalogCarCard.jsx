@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import clsx from 'clsx';
 import { IoMdHeartEmpty, IoMdHeart } from 'react-icons/io';
 import { selectIsFavoriteId } from '../../redux/favorites/selectors';
 import { toggleFavoriteCar } from '../../redux/favorites/slice';

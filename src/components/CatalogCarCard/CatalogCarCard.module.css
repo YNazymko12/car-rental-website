@@ -1,12 +1,17 @@
 .wrapper {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 424px;
 }
 
 .image {
   border-radius: 14px;
+  object-fit: cover;
 }
 
 .titleContainer {
+  flex-grow: 1;
   margin-top: 16px;
   margin-bottom: 8px;
   display: flex;
@@ -23,10 +28,13 @@
   color: var(--light-blue);
 }
 .info {
+  flex-grow: 1;
   margin-bottom: 28px;
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
   gap: 4px;
+  min-height: 40px;
 }
 
 .infoText {
@@ -37,6 +45,7 @@
 }
 
 .button {
+  margin-top: auto;
   padding: 12px 97px;
   font-weight: 600;
   font-size: 16px;
