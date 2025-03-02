@@ -1,40 +1,23 @@
-import { useSelector, useDispatch } from 'react-redux';
-import toast, { Toaster } from 'react-hot-toast';
+import { useSelector } from 'react-redux';
 import clsx from 'clsx';
 import {
-  selectCars,
+  selectVisibleCars,
   selectIsLoading,
-  selectError,
   selectTotalPages,
 } from '../../redux/cars/selectors';
-import { fetchAllCars } from '../../redux/cars/operations';
-import { selectPaginationPage } from '../../redux/pagination/selectors';
-import { nextPage } from '../../redux/pagination/slice';
-
 import CatalogCarCard from '../CatalogCarCard/CatalogCarCard';
-
 import css from './CatalogList.module.css';
-import { useEffect } from 'react';
 
-const CatalogList = () => {
-  const cars = useSelector(selectCars);
+const CatalogList = ({ loadMore }) => {
+  const cars = useSelector(selectVisibleCars);
   const loading = useSelector(selectIsLoading);
-  const error = useSelector(selectError);
-  const currentPage = useSelector(selectPaginationPage);
   const totalPages = useSelector(selectTotalPages);
-  const dispatch = useDispatch();
+  const currentPage = useSelector(state => state.pagination.page);
 
-  useEffect(() => {
-    dispatch(fetchAllCars(currentPage));
-  }, [dispatch, currentPage]);
-
-  const loadMore = () => {
-    dispatch(nextPage());
-  };
-
-  if (error) {
-    toast.error(error, { position: 'top-right' });
-  }
+  const shouldShowLoadMore =
+    cars.length > 0 &&
+    currentPage < totalPages &&
+    (cars.length >= 12 || currentPage === 1);
 
   return (
     <>
@@ -47,8 +30,8 @@ const CatalogList = () => {
             </li>
           ))}
       </ul>
-      {error && <Toaster />}
-      {cars.length > 0 && currentPage < totalPages && (
+
+      {shouldShowLoadMore && (
         <div className={css.buttonContainer}>
           <button
             onClick={loadMore}
