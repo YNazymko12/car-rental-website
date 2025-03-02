@@ -3,6 +3,7 @@ import clsx from 'clsx';
 import {
   selectVisibleCars,
   selectIsLoading,
+  selectError,
   selectTotalPages,
 } from '../../redux/cars/selectors';
 import CatalogCarCard from '../CatalogCarCard/CatalogCarCard';
@@ -11,6 +12,7 @@ import css from './CatalogList.module.css';
 const CatalogList = ({ loadMore }) => {
   const cars = useSelector(selectVisibleCars);
   const loading = useSelector(selectIsLoading);
+  const error = useSelector(selectError);
   const totalPages = useSelector(selectTotalPages);
   const currentPage = useSelector(state => state.pagination.page);
 
@@ -21,18 +23,18 @@ const CatalogList = ({ loadMore }) => {
 
   return (
     <>
-      {cars.length === 0 ? ( // Перевірка, чи масив порожній
+      <ul className={css.list}>
+        {cars.map(car => (
+          <li className={css.item} key={car.id}>
+            <CatalogCarCard car={car} />
+          </li>
+        ))}
+      </ul>
+
+      {!loading && cars.length === 0 && !error && (
         <div className={css.noResults}>
           <p>Nothing found for your request. Please try another filter.</p>
         </div>
-      ) : (
-        <ul className={css.list}>
-          {cars.map(car => (
-            <li className={css.item} key={car.id}>
-              <CatalogCarCard car={car} />
-            </li>
-          ))}
-        </ul>
       )}
 
       {shouldShowLoadMore && (

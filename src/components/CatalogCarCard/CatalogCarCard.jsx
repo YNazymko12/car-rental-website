@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { IoMdHeartEmpty, IoMdHeart } from 'react-icons/io';
 import { selectIsFavoriteId } from '../../redux/favorites/selectors';
 import { toggleFavoriteCar } from '../../redux/favorites/slice';
+import noImage from '../../assets/images/no-image.jpg';
 import css from './CatalogCarCard.module.css';
 
 const CatalogCarCard = ({ car }) => {
@@ -18,7 +19,7 @@ const CatalogCarCard = ({ car }) => {
     brand,
     model,
     type,
-    img,
+    img = noImage,
     rentalPrice,
     address,
     rentalCompany,
