@@ -1,4 +1,4 @@
-# RentalCar - Frontend
+# Rental Car Website
 
 ## Опис проєкту
 
